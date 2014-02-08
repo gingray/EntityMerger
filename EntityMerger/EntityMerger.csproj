@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IDirectoryBase.cs" />
     <Compile Include="Mapper\FileMapper.cs" />
     <Compile Include="Mapper\MapperBase.cs" />
     <Compile Include="Mapper\ObjectMapper.cs" />
