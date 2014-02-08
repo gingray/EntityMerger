@@ -1,13 +1,14 @@
 ﻿using System;
 using System.IO;
+using EntityMerger.Interfaces;
 
 namespace EntityMerger.Mapper
 {
-    public class FileMapper<TObject> : MapperBase<FileInfo, TObject> where TObject : class
+    public class FileMapper<TObject> : MapperBase<FileInfo, TObject>, IDirectoryBase where TObject : class
     {
         private readonly Func<FileInfo, TObject> _mapFunc;
 
-        public FileMapper(FileInfo entity,Func<FileInfo,TObject> mapFunc )
+        public FileMapper(FileInfo entity, Func<FileInfo, TObject> mapFunc)
             : base(entity)
         {
             _mapFunc = mapFunc;
@@ -17,5 +18,7 @@ namespace EntityMerger.Mapper
         {
             return _mapFunc(entity);
         }
+
+        public string DirectoryBase { get; set; }
     }
 }
